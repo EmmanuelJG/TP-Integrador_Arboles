@@ -2,7 +2,7 @@
 #Definicion de funciones
 
 def recorrer_arbol(nodo):
-    # Muestra el resultado final de la eleccion
+    # Corrobora que no este en uno de los nodos hoja, para poder continuar
     if nodo[3] is not None:
         print(f"\nRecomendacion: {nodo[3]}")
         return
@@ -52,17 +52,6 @@ def main():
 # Mensaje de inicio del programa siguiendo con el recorrido del arbol.
     print("Bienvenido al sistema de recomendacion de vehiculos Volkswagen, a continuacion debera contestar las siguientes preguntas:")
     recorrer_arbol(arbol)
-
-def imprimir_arbol(nodo, nivel=0):
-    if nodo is None:
-        return
-    sangria = "  " * nivel
-    if nodo[0]:
-        print(f"{sangria}Pregunta: {nodo[0]}")
-    if nodo[3]:
-        print(f"{sangria}Resultado: {nodo[3]}")
-    imprimir_arbol(nodo[1], nivel + 1)
-    imprimir_arbol(nodo[2], nivel + 1)
 
 
 #Codigo de ejecucion.
